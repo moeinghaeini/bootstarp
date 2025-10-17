@@ -1,0 +1,2 @@
+# bootstarp
+bootstrap from scratch
