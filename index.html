@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moein Ghaeini - Data Engineer & Computer Science Student</title>
+    <meta name="description" content="Professional portfolio of Moein Ghaeini - Data Engineer, Computer Science MSc student at University of Milan. Specializing in AWS, Python, and data analysis.">
+    <meta name="keywords" content="portfolio, data engineer, computer science, aws, python, data analysis, machine learning, milan university">
+    <meta name="author" content="Moein Ghaeini">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Moein Ghaeini - Data Engineer & Computer Science Student">
+    <meta property="og:description" content="Professional portfolio of Moein Ghaeini - Data Engineer, Computer Science MSc student at University of Milan. Specializing in AWS, Python, and data analysis.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://moeinghaeini.github.io">
+    <meta property="og:image" content="https://moeinghaeini.github.io/profile.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Moein Ghaeini - Data Engineer & Computer Science Student">
+    <meta name="twitter:description" content="Professional portfolio of Moein Ghaeini - Data Engineer, Computer Science MSc student at University of Milan.">
+    <meta name="twitter:image" content="https://moeinghaeini.github.io/profile.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#764ba2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Portfolio">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-code me-2"></i>Moein Ghaeini
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resume">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#misc">Misc</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light btn-sm ms-2" id="themeToggle" title="Toggle Dark Mode">
+                            <i class="fas fa-moon" id="themeIcon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div id="particles-js"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold text-white mb-4" id="heroTitle">Hello, I'm Moein Ghaeini</h1>
+                        <p class="lead text-white mb-4">Data Engineer & Computer Science Student</p>
+                        <p class="text-white-50 mb-4">Final-semester MSc Computer Science student at University of Milan. 5+ years professional experience in data analysis, machine learning, and software development across Europe and Asia.</p>
+                        <div class="hero-buttons">
+                            <a href="#portfolio" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-briefcase me-2"></i>View My Work
+                            </a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-envelope me-2"></i>Get In Touch
+                            </a>
+                        </div>
+                        <div class="hero-stats mt-4">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <h4 class="text-white mb-0" data-count="15">0</h4>
+                                    <small class="text-white-50">Projects</small>
+                                </div>
+                                <div class="col-4">
+                                    <h4 class="text-white mb-0" data-count="5">0</h4>
+                                    <small class="text-white-50">Years</small>
+                                </div>
+                                <div class="col-4">
+                                    <h4 class="text-white mb-0" data-count="3">0</h4>
+                                    <small class="text-white-50">Countries</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="hero-image">
+                        <div class="profile-card">
+                            <div class="profile-image">
+                                <img src="profile.jpg" alt="Moein Ghaeini" class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover; border: 4px solid rgba(255,255,255,0.3);">
+                            </div>
+                            <div class="profile-ring"></div>
+                            <div class="floating-elements">
+                                <div class="floating-element" style="--delay: 0s;">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <div class="floating-element" style="--delay: 1s;">
+                                    <i class="fab fa-aws"></i>
+                                </div>
+                                <div class="floating-element" style="--delay: 2s;">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="floating-element" style="--delay: 3s;">
+                                    <i class="fab fa-java"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Portfolio</h2>
+                    <p class="lead text-muted">Some of my recent projects</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-top bg-primary d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <i class="fas fa-chart-line fa-3x text-white"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Ultrasonic Testing Data Analysis</h5>
+                            <p class="card-text">Developed data analysis workflows for ultrasonic testing results at Midok Copper Mine. Automated reports with Python/Excel, reducing manual effort by 60%.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary me-1">Python</span>
+                                <span class="badge bg-secondary me-1">Excel</span>
+                                <span class="badge bg-secondary">Data Analysis</span>
+                            </div>
+                            <a href="#" class="btn btn-outline-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-top bg-success d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <i class="fas fa-globe fa-3x text-white"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">WordPress Websites</h5>
+                            <p class="card-text">Developed WordPress websites with custom themes. Delivered 15+ client websites with 50% faster load times and 30% SEO improvement.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary me-1">WordPress</span>
+                                <span class="badge bg-secondary me-1">HTML/CSS</span>
+                                <span class="badge bg-secondary">JavaScript</span>
+                            </div>
+                            <a href="#" class="btn btn-outline-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-top bg-warning d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <i class="fas fa-cloud fa-3x text-white"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">AWS Data Pipeline</h5>
+                            <p class="card-text">Built scalable data pipelines using AWS services including EC2, S3, Lambda, Glue, and Kinesis for real-time data processing and analytics.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary me-1">AWS</span>
+                                <span class="badge bg-secondary me-1">Python</span>
+                                <span class="badge bg-secondary">ETL</span>
+                            </div>
+                            <a href="#" class="btn btn-outline-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Resume</h2>
+                    <p class="lead text-muted">My professional experience and skills</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="h4 mb-4">Experience</h3>
+                    <div class="timeline">
+                        <div class="timeline-item mb-4">
+                            <div class="timeline-marker bg-primary"></div>
+                            <div class="timeline-content">
+                                <h5 class="mb-1">Student Assistant</h5>
+                                <p class="text-muted mb-1">Studierendenwerk Freiburg, Germany | April 2025 - September 2025</p>
+                                <p>Supported student services through data tracking, analysis, and reporting. Improved response efficiency by 40% through standardized templates.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item mb-4">
+                            <div class="timeline-marker bg-primary"></div>
+                            <div class="timeline-content">
+                                <h5 class="mb-1">Data Analyst</h5>
+                                <p class="text-muted mb-1">Pishro Azma Sanat Babak Gostar, Iran | October 2021 - September 2022</p>
+                                <p>Developed data analysis workflows for ultrasonic testing results at Midok Copper Mine. Automated reports with Python/Excel, reducing manual effort by 60%.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item mb-4">
+                            <div class="timeline-marker bg-primary"></div>
+                            <div class="timeline-content">
+                                <h5 class="mb-1">Website Developer</h5>
+                                <p class="text-muted mb-1">Pardisan System, Tehran, Iran | March 2017 - September 2021</p>
+                                <p>Developed WordPress websites with custom themes. Delivered 15+ client websites with 50% faster load times and 30% SEO improvement.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item mb-4">
+                            <div class="timeline-marker bg-primary"></div>
+                            <div class="timeline-content">
+                                <h5 class="mb-1">Member of the Board of Education</h5>
+                                <p class="text-muted mb-1">Aga Khan Development Network, Iran | May 2012 - September 2022</p>
+                                <p>Organized workshops, meetings, and competitions. Applied teamwork and communication skills to deliver positive experiences for attendees.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="h4 mb-4">Skills</h3>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <h6>Programming Languages</h6>
+                            <div class="progress mb-2" style="height: 8px;">
+                                <div class="progress-bar" style="width: 90%"></div>
+                            </div>
+                            <small class="text-muted">Java, Python, SQL, C++, C#</small>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6>Data Analysis</h6>
+                            <div class="progress mb-2" style="height: 8px;">
+                                <div class="progress-bar" style="width: 85%"></div>
+                            </div>
+                            <small class="text-muted">Pandas, NumPy, Matplotlib, Seaborn</small>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6>Cloud & Data Engineering</h6>
+                            <div class="progress mb-2" style="height: 8px;">
+                                <div class="progress-bar" style="width: 80%"></div>
+                            </div>
+                            <small class="text-muted">AWS, Docker, Kubernetes, Spark</small>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6>Databases</h6>
+                            <div class="progress mb-2" style="height: 8px;">
+                                <div class="progress-bar" style="width: 75%"></div>
+                            </div>
+                            <small class="text-muted">MySQL, PostgreSQL, MongoDB, DynamoDB</small>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h6>Certifications</h6>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-certificate text-primary me-2"></i>AWS Certified Data Engineer Associate</li>
+                        </ul>
+                        
+                        <h6 class="mt-4">Education</h6>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-graduation-cap text-primary me-2"></i>MSc Computer Science (2023-2025)</li>
+                            <li class="ms-4 text-muted">University of Milan, La Statale, Milan, Italy</li>
+                            <li><i class="fas fa-graduation-cap text-primary me-2"></i>BSc Computer Engineering (2013-2017)</li>
+                            <li class="ms-4 text-muted">Islamic Azad University, South Tehran Branch, Iran</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Blog</h2>
+                    <p class="lead text-muted">Latest thoughts and tutorials</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <article class="card h-100 shadow-sm">
+                        <div class="card-img-top bg-info d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <i class="fas fa-code fa-3x text-white"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Getting Started with React Hooks</h5>
+                            <p class="card-text">Learn how to use React Hooks to write cleaner and more maintainable React components.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">March 15, 2024</small>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <article class="card h-100 shadow-sm">
+                        <div class="card-img-top bg-danger d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <i class="fas fa-server fa-3x text-white"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Building Scalable APIs with Node.js</h5>
+                            <p class="card-text">Best practices for creating robust and scalable REST APIs using Node.js and Express.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">March 10, 2024</small>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <article class="card h-100 shadow-sm">
+                        <div class="card-img-top bg-dark d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <i class="fas fa-palette fa-3x text-white"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">CSS Grid vs Flexbox</h5>
+                            <p class="card-text">A comprehensive comparison of CSS Grid and Flexbox, when to use each, and practical examples.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">March 5, 2024</small>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Misc Section -->
+    <section id="misc" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Miscellaneous</h2>
+                    <p class="lead text-muted">Additional information and interests</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-language fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title">Languages</h5>
+                            <p class="card-text">Persian (Native), English (C1), Italian (A2), German (A2)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-globe fa-3x text-success mb-3"></i>
+                            <h5 class="card-title">International Experience</h5>
+                            <p class="card-text">Erasmus+ exchanges: University of Freiburg (Germany), Polytechnic Institute of Santarém (Portugal). 4EU+ Program: University of Warsaw.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-trophy fa-3x text-warning mb-3"></i>
+                            <h5 class="card-title">Skills & Competencies</h5>
+                            <p class="card-text">Teamwork, Problem-solving, Leadership, Intercultural skills. Project management, Data management, Process optimization.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Get In Touch</h2>
+                    <p class="lead text-muted">Let's work together on your next project</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-4 text-center mb-3">
+                    <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
+                    <h6>Email</h6>
+                    <p class="text-muted">moeinghaeini@gmail.com</p>
+                </div>
+                <div class="col-lg-4 text-center mb-3">
+                    <i class="fas fa-phone fa-2x text-primary mb-2"></i>
+                    <h6>Phone</h6>
+                    <p class="text-muted">(+39) 351 6600 886</p>
+                </div>
+                <div class="col-lg-4 text-center mb-3">
+                    <i class="fas fa-map-marker-alt fa-2x text-primary mb-2"></i>
+                    <h6>Location</h6>
+                    <p class="text-muted">Via Edoardo Bassini 38, Milan, Italy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; Since 2017 Moein Ghaeini. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="https://www.linkedin.com/in/moeinghaeini" class="text-white me-3" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="https://www.github.com/moeinghaeini" class="text-white me-3" target="_blank" title="GitHub"><i class="fab fa-github fa-lg"></i></a>
+                    <a href="mailto:moeinghaeini@gmail.com" class="text-white me-3" title="Email"><i class="fas fa-envelope fa-lg"></i></a>
+                    <a href="https://wa.me/393516600886" class="text-white" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
