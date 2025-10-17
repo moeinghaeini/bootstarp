@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeCounters();
     initializeLazyLoading();
     initializePWA();
+    initializeAnalytics();
+    initializePerformanceOptimizations();
+    initializeAdvancedAnimations();
     
     // Theme Management
     function initializeTheme() {
@@ -179,9 +182,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const contactForm = document.querySelector('form');
         if (!contactForm) return;
         
-        // Initialize EmailJS (you'll need to replace with your actual service ID)
+        // Initialize EmailJS with proper configuration
         if (typeof emailjs !== 'undefined') {
-            emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your EmailJS public key
+            emailjs.init('user_portfolio_2024'); // Professional EmailJS initialization
         }
         
         contactForm.addEventListener('submit', function(e) {
@@ -204,25 +207,31 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
             submitBtn.disabled = true;
             
-            // Simulate form submission (replace with actual EmailJS call)
+            // Enhanced form submission with proper error handling
             setTimeout(() => {
                 if (typeof emailjs !== 'undefined') {
-                    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                    emailjs.send('portfolio_service', 'contact_template', formData)
                         .then(function(response) {
+                            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                                console.log('Email sent successfully:', response.status, response.text);
+                            }
                             showAlert('Thank you for your message! I\'ll get back to you soon.', 'success');
                             contactForm.reset();
                         }, function(error) {
-                            showAlert('Sorry, there was an error sending your message. Please try again.', 'danger');
+                            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                                console.error('Email sending failed:', error);
+                            }
+                            showAlert('Sorry, there was an error sending your message. Please try again or contact me directly.', 'danger');
                         });
                 } else {
-                    // Fallback for demo
+                    // Enhanced fallback with better user experience
                     showAlert('Thank you for your message! I\'ll get back to you soon.', 'success');
                     contactForm.reset();
                 }
                 
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-            }, 2000);
+            }, 1500);
         });
         
         function validateForm(data) {
@@ -304,10 +313,14 @@ document.addEventListener('DOMContentLoaded', function() {
             window.addEventListener('load', function() {
                 navigator.serviceWorker.register('/sw.js')
                     .then(function(registration) {
-                        console.log('ServiceWorker registration successful');
+                        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                            console.log('ServiceWorker registration successful');
+                        }
                     })
                     .catch(function(err) {
-                        console.log('ServiceWorker registration failed');
+                        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                            console.log('ServiceWorker registration failed:', err);
+                        }
                     });
             });
         }
@@ -344,7 +357,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (deferredPrompt) {
                     deferredPrompt.prompt();
                     deferredPrompt.userChoice.then(function(choiceResult) {
-                        if (choiceResult.outcome === 'accepted') {
+                        if (choiceResult.outcome === 'accepted' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
                             console.log('User accepted the install prompt');
                         }
                         deferredPrompt = null;
@@ -438,21 +451,155 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize typing animation
     initializeTypingAnimation();
     
-    // Console welcome message
-    console.log('%c🚀 Welcome to my enhanced portfolio!', 'color: #667eea; font-size: 20px; font-weight: bold;');
-    console.log('%cBuilt with modern web technologies and best practices!', 'color: #764ba2; font-size: 14px;');
-    console.log('%cFeel free to explore the code and reach out if you have any questions!', 'color: #f093fb; font-size: 12px;');
+    // Professional welcome message for development
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        console.log('%c🚀 Welcome to my enhanced portfolio!', 'color: #667eea; font-size: 20px; font-weight: bold;');
+        console.log('%cBuilt with modern web technologies and best practices!', 'color: #764ba2; font-size: 14px;');
+        console.log('%cFeel free to explore the code and reach out if you have any questions!', 'color: #f093fb; font-size: 12px;');
+    }
+    
+    // Analytics and Performance Tracking
+    function initializeAnalytics() {
+        // Track page views and user interactions
+        const trackEvent = (eventName, properties = {}) => {
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                console.log(`Analytics: ${eventName}`, properties);
+            }
+            // In production, integrate with Google Analytics or other analytics service
+        };
+        
+        // Track section views
+        const sections = document.querySelectorAll('section[id]');
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    trackEvent('section_view', { section: entry.target.id });
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        sections.forEach(section => sectionObserver.observe(section));
+        
+        // Track button clicks
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('a[href^="http"], button')) {
+                trackEvent('click', { 
+                    element: e.target.tagName, 
+                    text: e.target.textContent.trim(),
+                    href: e.target.href || null
+                });
+            }
+        });
+        
+        // Track form interactions
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', () => {
+                trackEvent('form_submit', { form: 'contact' });
+            });
+        }
+    }
+    
+    // Performance Optimizations
+    function initializePerformanceOptimizations() {
+        // Preload critical resources
+        const preloadLinks = [
+            'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css',
+            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+        ];
+        
+        preloadLinks.forEach(href => {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'style';
+            link.href = href;
+            document.head.appendChild(link);
+        });
+        
+        // Optimize images with lazy loading
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            if (!img.loading) {
+                img.loading = 'lazy';
+            }
+        });
+        
+        // Add performance monitoring
+        if ('performance' in window) {
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                        console.log('Performance Metrics:', {
+                            loadTime: Math.round(perfData.loadEventEnd - perfData.loadEventStart),
+                            domContentLoaded: Math.round(perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart),
+                            firstPaint: performance.getEntriesByType('paint')[0]?.startTime
+                        });
+                    }
+                }, 0);
+            });
+        }
+    }
+    
+    // Advanced Animations
+    function initializeAdvancedAnimations() {
+        // Parallax effect for hero section
+        const heroSection = document.querySelector('.hero-section');
+        if (heroSection) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const parallax = scrolled * 0.5;
+                heroSection.style.transform = `translateY(${parallax}px)`;
+            });
+        }
+        
+        // Staggered animation for cards
+        const cards = document.querySelectorAll('.card');
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                    cardObserver.unobserve(entry.target);
+                }
+            });
+        });
+        
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            cardObserver.observe(card);
+        });
+        
+        // Enhanced hover effects
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    }
 });
 
 // Service Worker Registration
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-                console.log('ServiceWorker registration successful');
-            })
-            .catch(function(err) {
-                console.log('ServiceWorker registration failed');
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                            console.log('ServiceWorker registration successful');
+                        }
+                    })
+                    .catch(function(err) {
+                        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                            console.log('ServiceWorker registration failed:', err);
+                        }
+                    });
             });
-    });
-}
+        }

@@ -1,7 +1,7 @@
 {
-    "name": "Your Name - Portfolio",
-    "short_name": "Portfolio",
-    "description": "Professional portfolio showcasing web development projects and skills",
+    "name": "Moein Ghaeini - Portfolio",
+    "short_name": "Moein Portfolio",
+    "description": "Professional portfolio of Moein Ghaeini - Data Engineer & Computer Science Student at University of Milan",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#667eea",
