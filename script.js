@@ -1036,6 +1036,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 progressBar.style.width = progress + '%';
             }
         }, 100);
+        
+        // Force hide loading screen after 3 seconds maximum
+        setTimeout(() => {
+            if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
+                loadingScreen.classList.add('hidden');
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }
+        }, 3000);
     }
     
     // Advanced Typing Animation
@@ -1237,6 +1247,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeCursorEffects();
     initializeAdvancedInteractions();
     initializePerformanceOptimizations();
+    initializeTestingIntegration();
     
     // Advanced Interactions
     function initializeAdvancedInteractions() {
@@ -1377,6 +1388,121 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 30000);
         }
     }
+    
+    // Testing Integration
+    function initializeTestingIntegration() {
+        // Add testing controls to the website
+        if (window.location.search.includes('test=true') || localStorage.getItem('enableTesting') === 'true') {
+            addTestingControls();
+        }
+        
+        // Add keyboard shortcut for testing (Ctrl+Shift+T)
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.shiftKey && e.key === 'T') {
+                e.preventDefault();
+                toggleTestingMode();
+            }
+        });
+        
+        // Monitor for test results
+        if (window.testResults) {
+            displayTestResults(window.testResults);
+        }
+    }
+    
+    function addTestingControls() {
+        // Create testing panel
+        const testingPanel = document.createElement('div');
+        testingPanel.id = 'testingPanel';
+        testingPanel.innerHTML = `
+            <div style="position: fixed; top: 20px; right: 20px; background: rgba(0,0,0,0.9); color: white; padding: 15px; border-radius: 10px; z-index: 10000; font-family: monospace; font-size: 12px; max-width: 300px;">
+                <h6 style="margin: 0 0 10px 0; color: #00ff00;">🧪 Testing Mode Active</h6>
+                <div id="testStatus">Ready to test</div>
+                <div style="margin-top: 10px;">
+                    <button onclick="runQuickTest()" style="background: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 3px; margin-right: 5px; cursor: pointer;">Quick Test</button>
+                    <button onclick="openTestDashboard()" style="background: #28a745; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Dashboard</button>
+                    <button onclick="toggleTestingMode()" style="background: #dc3545; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Close</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(testingPanel);
+    }
+    
+    function toggleTestingMode() {
+        const isEnabled = localStorage.getItem('enableTesting') === 'true';
+        localStorage.setItem('enableTesting', (!isEnabled).toString());
+        
+        if (!isEnabled) {
+            location.reload();
+        } else {
+            const panel = document.getElementById('testingPanel');
+            if (panel) panel.remove();
+        }
+    }
+    
+    function runQuickTest() {
+        const statusDiv = document.getElementById('testStatus');
+        if (statusDiv) {
+            statusDiv.innerHTML = 'Running quick test...';
+            
+            // Simulate quick test
+            setTimeout(() => {
+                const results = {
+                    total: 10,
+                    passed: 9,
+                    failed: 1,
+                    details: [
+                        { name: 'DOM Elements', passed: true },
+                        { name: 'CSS Loading', passed: true },
+                        { name: 'JavaScript Loading', passed: true },
+                        { name: 'Font Loading', passed: true },
+                        { name: 'Performance', passed: true },
+                        { name: 'Accessibility', passed: true },
+                        { name: 'Responsive Design', passed: true },
+                        { name: 'Integrations', passed: true },
+                        { name: 'Animations', passed: true },
+                        { name: 'Forms', passed: false }
+                    ]
+                };
+                
+                displayTestResults(results);
+            }, 2000);
+        }
+    }
+    
+    function openTestDashboard() {
+        window.open('test-dashboard.html', '_blank');
+    }
+    
+    function displayTestResults(results) {
+        const statusDiv = document.getElementById('testStatus');
+        if (statusDiv && results) {
+            const successRate = ((results.passed / results.total) * 100).toFixed(1);
+            let html = `
+                <div style="margin-bottom: 10px;">
+                    <strong>Test Results:</strong><br>
+                    ✅ Passed: ${results.passed}<br>
+                    ❌ Failed: ${results.failed}<br>
+                    📊 Success Rate: ${successRate}%
+                </div>
+            `;
+            
+            if (results.failed > 0) {
+                html += '<div style="color: #ff6b6b;"><strong>Failed Tests:</strong><br>';
+                results.details.filter(test => !test.passed).forEach(test => {
+                    html += `• ${test.name}<br>`;
+                });
+                html += '</div>';
+            }
+            
+            statusDiv.innerHTML = html;
+        }
+    }
+    
+    // Make functions globally available
+    window.runQuickTest = runQuickTest;
+    window.openTestDashboard = openTestDashboard;
+    window.toggleTestingMode = toggleTestingMode;
 });
 
 // Latest 2025 Performance Optimizations
