@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moein Ghaeini Hesarooeyeh - Data Engineer & Computer Science Student</title>
+    <meta name="description" content="Professional portfolio of Moein Ghaeini Hesarooeyeh - Data Engineer, Computer Science MSc student at University of Milan. 5+ years experience in data analysis, machine learning, and software development across Europe and Asia.">
+    <meta name="keywords" content="portfolio, data engineer, computer science, aws, python, data analysis, machine learning, milan university, cloud data engineer">
+    <meta name="author" content="Moein Ghaeini Hesarooeyeh">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Moein Ghaeini Hesarooeyeh - Data Engineer & Computer Science Student">
+    <meta property="og:description" content="Professional portfolio of Moein Ghaeini Hesarooeyeh - Data Engineer, Computer Science MSc student at University of Milan. 5+ years experience in data analysis, machine learning, and software development across Europe and Asia.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://moeinghaeini.github.io">
+    <meta property="og:image" content="https://moeinghaeini.github.io/profile.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Moein Ghaeini Hesarooeyeh - Data Engineer & Computer Science Student">
+    <meta name="twitter:description" content="Professional portfolio of Moein Ghaeini Hesarooeyeh - Data Engineer, Computer Science MSc student at University of Milan.">
+    <meta name="twitter:image" content="https://moeinghaeini.github.io/profile.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#8B7355">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Portfolio">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- Critical CSS Inline -->
+    <style>
+        /* Critical above-the-fold CSS */
+        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;background-color:#FAFAFA;color:#2C2C2C;margin:0;padding:0}
+        .loading-screen{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1A1A1A 0%,#4A4A4A 50%,#8B7355 100%);display:flex;align-items:center;justify-content:center;z-index:10000;color:white}
+        .navbar{background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid #E8E8E8}
+        .hero-section{background:linear-gradient(135deg,#2C2C2C 0%,#4A4A4A 50%,#8B7355 100%);min-height:100vh;display:flex;align-items:center;color:white}
+        h1,h2,h3,h4,h5,h6{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.2}
+        .display-4,.display-5{font-family:'Playfair Display',Georgia,serif;font-weight:700;line-height:1.1}
+        .btn{transition:all 0.3s ease;border-radius:8px;font-weight:500}
+        .card{transition:all 0.3s ease;border-radius:15px;border:none;box-shadow:0 8px 32px rgba(0,0,0,0.08)}
+        .card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,0.12)}
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="text-center">
+            <div class="spinner-border text-light mb-3" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <h4>Loading Portfolio...</h4>
+            <p class="text-muted">Preparing your experience</p>
+        </div>
+    </div>
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">Moein Ghaeini</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-primary ms-2" id="themeToggle" aria-label="Toggle theme">
+                            <i class="fas fa-moon" id="themeIcon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="display-4 fw-bold mb-4">Hello, I'm <span class="text-warning">Moein Ghaeini</span></h1>
+                        <p class="lead mb-4">Data Engineer & Computer Science Student at University of Milan</p>
+                        <p class="mb-4">Passionate about transforming data into actionable insights. 5+ years of experience in data analysis, machine learning, and software development across Europe and Asia.</p>
+                        <div class="d-flex gap-3">
+                            <a href="#portfolio" class="btn btn-primary btn-lg">View My Work</a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg">Get In Touch</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <div class="profile-card">
+                            <img src="images/profile.jpg" alt="Moein Ghaeini" class="rounded-circle profile-img" width="300" height="300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center mb-5">
+                        <h2 class="display-5 fw-bold">My Portfolio</h2>
+                        <p class="lead text-muted">Projects that showcase my expertise in data engineering and software development</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">AWS Data Pipeline</h5>
+                                <p class="card-text">Built a scalable data pipeline processing 1M+ records daily using AWS Glue, Kinesis, and Redshift.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-primary me-1">AWS</span>
+                                    <span class="badge bg-primary me-1">Python</span>
+                                    <span class="badge bg-primary">Data Engineering</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Machine Learning Model</h5>
+                                <p class="card-text">Developed a predictive model with 95% accuracy for customer churn prediction using Python and scikit-learn.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-success me-1">Python</span>
+                                    <span class="badge bg-success me-1">ML</span>
+                                    <span class="badge bg-success">Scikit-learn</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">React Dashboard</h5>
+                                <p class="card-text">Created an interactive dashboard for real-time data visualization with React and D3.js.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-info me-1">React</span>
+                                    <span class="badge bg-info me-1">D3.js</span>
+                                    <span class="badge bg-info">JavaScript</span>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center mb-5">
+                        <h2 class="display-5 fw-bold">Resume</h2>
+                        <p class="lead text-muted">My professional journey and expertise</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h3>Experience</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h5>Data Engineer</h5>
+                                <p class="text-muted">Tech Company | 2022 - Present</p>
+                                <p>Built and maintained data pipelines processing millions of records daily.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>Data Analyst</h5>
+                                <p class="text-muted">Analytics Firm | 2020 - 2022</p>
+                                <p>Analyzed business data and created actionable insights for stakeholders.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3>Skills</h3>
+                        <div class="skills">
+                            <div class="skill-item mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Python</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>AWS</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>JavaScript</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center mb-5">
+                        <h2 class="display-5 fw-bold">Latest Articles</h2>
+                        <p class="lead text-muted">Insights on data engineering and technology</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Building Scalable Data Pipelines</h5>
+                                <p class="card-text">Learn how to design and implement robust data pipelines that can handle millions of records.</p>
+                                <small class="text-muted">March 15, 2024</small>
+                                <a href="#" class="btn btn-sm btn-outline-primary float-end">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">AWS Best Practices</h5>
+                                <p class="card-text">Essential tips for optimizing your AWS infrastructure and reducing costs.</p>
+                                <small class="text-muted">March 10, 2024</small>
+                                <a href="#" class="btn btn-sm btn-outline-primary float-end">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Machine Learning in Production</h5>
+                                <p class="card-text">Best practices for deploying and maintaining ML models in production environments.</p>
+                                <small class="text-muted">March 5, 2024</small>
+                                <a href="#" class="btn btn-sm btn-outline-primary float-end">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center mb-5">
+                        <h2 class="display-5 fw-bold">Get In Touch</h2>
+                        <p class="lead text-muted">Let's discuss your next project</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>&copy; 2024 Moein Ghaeini. All rights reserved.</p>
+                </div>
+                <div class="col-lg-6 text-end">
+                    <a href="#" class="text-light me-3"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-light me-3"><i class="fab fa-github"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Alert Container -->
+    <div id="alertContainer" class="position-fixed top-0 end-0 p-3" style="z-index: 1050;"></div>
+<script defer src="/js/main.js"></script></body>
+</html>

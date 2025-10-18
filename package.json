@@ -1,0 +1,87 @@
+{
+  "name": "moein-ghaeini-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Moein Ghaeini - Data Engineer & Computer Science Student",
+  "main": "src/index.html",
+  "scripts": {
+    "dev": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "build:prod": "webpack --mode production",
+    "start": "webpack serve --mode development --open",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/scripts/ --ext .ts,.js",
+    "lint:css": "stylelint src/styles/",
+    "lint:fix": "eslint src/scripts/ --ext .ts,.js --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "serve": "python3 -m http.server 8080",
+    "deploy": "npm run build && ./aws-deployment/deploy.sh",
+    "deploy:aws": "npm run build && ./aws-deployment/deploy.sh",
+    "auto-deploy": "node auto-deploy.js",
+    "watch": "npm run auto-deploy"
+  },
+  "keywords": [
+    "portfolio",
+    "data-engineer",
+    "computer-science",
+    "web-development",
+    "machine-learning",
+    "aws",
+    "python",
+    "react"
+  ],
+  "author": {
+    "name": "Moein Ghaeini Hesarooeyeh",
+    "email": "moeinghaeini@gmail.com",
+    "url": "https://moeinghaeini.github.io"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moeinghaeini/portfolio.git"
+  },
+  "homepage": "https://moeinghaeini.github.io",
+  "dependencies": {
+    "particles.js": "^2.0.0",
+    "@emailjs/browser": "^3.11.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "css-minimizer-webpack-plugin": "^5.0.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "terser-webpack-plugin": "^5.3.9",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "postcss": "^8.4.24",
+    "postcss-loader": "^7.3.3",
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "eslint": "^8.50.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0",
+    "jest": "^29.6.2",
+    "@types/jest": "^29.5.4",
+    "ts-jest": "^29.1.1",
+    "rimraf": "^5.0.1",
+    "chokidar": "^3.5.3"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
