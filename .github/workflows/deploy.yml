@@ -32,26 +32,31 @@ jobs:
       run: npm run build:prod || npm run build || echo "Build step completed"
       
     - name: Configure AWS credentials
-      if: ${{ secrets.AWS_ACCESS_KEY_ID != '' }}
+      if: env.AWS_ACCESS_KEY_ID != ''
       uses: aws-actions/configure-aws-credentials@v4
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
         
     - name: Deploy to S3
-      if: ${{ secrets.AWS_ACCESS_KEY_ID != '' && secrets.S3_BUCKET_NAME != '' }}
+      if: env.AWS_ACCESS_KEY_ID != '' && env.S3_BUCKET_NAME != ''
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
       run: |
-        aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }} --delete || echo "S3 deployment skipped - secrets not configured"
+        aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }} --delete || echo "S3 deployment skipped"
         
     - name: Invalidate CloudFront
-      if: ${{ secrets.AWS_ACCESS_KEY_ID != '' && secrets.CLOUDFRONT_DISTRIBUTION_ID != '' }}
+      if: env.AWS_ACCESS_KEY_ID != '' && env.CLOUDFRONT_DISTRIBUTION_ID != ''
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
       run: |
         aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*" || echo "CloudFront invalidation skipped"
         
     - name: Notify deployment
       if: success()
-      run: |
-        echo "✅ Deployment successful!"
-        echo "🌐 Website URL: https://${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}.cloudfront.net"
-
+      run: echo "Deployment complete"
